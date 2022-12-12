@@ -26,26 +26,43 @@ st.write("##### Kelas : Penambangan Data A ")
 description, upload_data, preporcessing, modeling, implementation = st.tabs(["Description", "Upload Data", "Prepocessing", "Modeling", "Implementation"])
 
 with description:
-    st.write("###### Aplikasi ini untuk : Deteksi Stres Manusia di dalam dan melalui Tidur ")
-    st.write("""Tingkat mendengkur(sr): Mendengkur atau mengorok saat tidur menjadi hal yang dapat mengganggu kualitas tidur, baik itu untuk yang mendengarnya bahkan juga untuk diri sendiri yang melakukannya. Dengkuran dapat terjadi karena terhambatnya atau menyempitnya saluran napas. Makin sempit saluran napas, makin keras pula suara dengkuran yang dihasilkan.:""")
-    st.write("""Laju pernafasan(rr): Laju pernapasan didefinisikan sebagai jumlah napas yang dilakukan per menitnya. Jumlah napas normal manusia dewasa per menitnya berkisar di antara 12-20 kali; namun, nilai ini merujuk pada keadaan tidak berolahraga. Saat berolahraga, jumlah napas akan meningkat dari interval 12-20.:""")
-    st.write("""Suhu tubuh(t): Untuk orang dewasa, suhu tubuh normal berkisar antara 36,1-37,2 derajat Celcius. Sedangkan untuk bayi dan anak kecil, suhu tubuh normal bisa lebih tinggi, yaitu antara 36,6-38 derajat Celcius. Suhu tubuh tinggi yang dikategorikan demam berada di atas 38 derajat Celcius dan tidak mutlak berbahaya.""") 
-    st.write("""Laju pergerakan tungkai(lm): Ekstremitas, atau sering disebut anggota gerak, adalah perpanjangan dari anggota tubuh utama.""")
-    st.write("""Kadar oksigen dalam darah(bo): """)
-    st.write("""pergerakan mata(rem): Gerakan bola mata diatur oleh beberapa area pada otak yaitu korteks, batang otak dan serebelum sehingga terbentuk gerak bola mata yang terintegrasi. """) 
-    st.write("""Jumlah jam tidur(sr): Waktu tidur yang sesuai, agar bisa mendapatkan kualitas waktu tidur yang baik. """)
-    st.write("""Detak jantung(hr): Detak jantung normal per menit bagi orang dewasa, termasuk yang lebih tua, adalah 50 serta 100 bpm (denyut per menit). Sedangkan, atlet yang sedang berlatih memiliki detak jantung istirahat normal di bawah 60 bpm, kadang-kadang capai 40 bpm.""")
-    st.write("""Tingkat stres:  
-    """)
-    st.markdown(
-        """
-        0 - rendah/normal
-        1 – sedang rendah
-        2- sedang
-        3- sedang tinggi
-        4- tinggi
-    """)
-    st.write("""Jika Anda menggunakan kumpulan data ini atau menemukan informasi ini berkontribusi terhadap penelitian Anda, silakan kutip:
+    st.write("""# Dataset description """)
+    st.write("""###### Data setini adalah : Human Stress Detection in and through Sleep (Deteksi Stres Manusia di dalam dan melalui Tidur) """)
+    st.write("""###### Sumber dataset dari kaggle : https://www.kaggle.com/datasets/laavanya/human-stress-detection-in-and-through-sleep?select=SaYoPillow.csv""")
+    st.write("""###### Penjelasan setiap kolom : """)
+    st.write("""Tingkat mendengkur - snoring rate(sr): 
+    
+    Mendengkur atau mengorok saat tidur menjadi hal yang dapat mengganggu kualitas tidur. Dengkuran dapat terjadi karena terhambatnya atau menyempitnya saluran napas. Makin sempit saluran napas, makin keras pula suara dengkuran yang dihasilkan. """)
+    st.write("""Laju pernafasan - respiration rate(rr): 
+    
+    Laju pernapasan yaitu jumlah napas yang dilakukan per menitnya. Jumlah napas normal manusia dewasa per menitnya berkisar di antara 12-20 kali; namun, nilai ini merujuk pada keadaan tidak berolahraga. Saat berolahraga, jumlah napas akan meningkat dari interval 12-20. """)
+    st.write("""Suhu tubuh - body temperature(t): 
+    
+    Untuk orang dewasa, suhu tubuh normal berkisar antara 36,1-37,2 derajat Celcius. Sedangkan untuk bayi dan anak kecil, suhu tubuh normal bisa lebih tinggi, yaitu antara 36,6-38 derajat Celcius. Suhu tubuh tinggi yang dikategorikan demam berada di atas 38 derajat Celcius dan tidak mutlak berbahaya.""") 
+    st.write("""Laju pergerakan tungkai - limb movement(lm): 
+    
+    Ekstremitas, atau sering disebut anggota gerak, adalah perpanjangan dari anggota tubuh utama.""")
+    st.write("""Kadar oksigen dalam darah - blood oxygen(bo):
+    
+    Kadar oksigen tinggi tekanan parsial oksigen (PaO2) diatas 120 mmHg, Kadar oksigen normal (PaO2) antara 80-100bmmHg, dan Kadar oksigen rendah (PaO2) di bawah 80 mmHg """)
+    st.write("""Gerakan mata - eye movement(rem): 
+    
+    Gerakan bola mata diatur oleh beberapa area pada otak yaitu korteks, batang otak dan serebelum sehingga terbentuk gerak bola mata yang terintegrasi. """) 
+    st.write("""Jumlah jam tidur - sleeping hours(sr): 
+    
+    Waktu tidur yang sesuai, agar bisa mendapatkan kualitas waktu tidur yang baik. """)
+    st.write("""Detak jantung - heart rate(hr): 
+    
+    Detak jantung normal per menit bagi orang dewasa, termasuk yang lebih tua, adalah 50 serta 100 bpm (denyut per menit). """)
+    st.write("""Tingkat stres : """)
+    st.write(""" 0 - rendah/normal """)
+    st.write(""" 1 – sedang rendah """)
+    st.write(""" 2- sedang """)
+    st.write(""" 3- sedang tinggi """)
+    st.write(""" 4- tinggi """)
+
+    st.write("""Jika Anda menggunakan kumpulan data ini atau menemukan informasi ini berkontribusi terhadap penelitian Anda, silakan kutip :
+
     1. L. Rachakonda, AK Bapatla, SP Mohanty, dan E. Kougianos, “SaYoPillow: Kerangka Kerja IoMT Terintegrasi-Privasi-Terintegrasi Blockchain untuk Manajemen Stres Mempertimbangkan Kebiasaan Tidur”, Transaksi IEEE pada Elektronik Konsumen (TCE), Vol. 67, No. 1, Feb 2021, hlm. 20-29.
     2. L. Rachakonda, SP Mohanty, E. Kougianos, K. Karunakaran, dan M. Ganapathiraju, “Bantal Cerdas: Perangkat Berbasis IoT untuk Deteksi Stres Mempertimbangkan Kebiasaan Tidur”, dalam Prosiding Simposium Internasional IEEE ke-4 tentang Sistem Elektronik Cerdas ( iSES), 2018, hlm. 161--166.""")
 
